@@ -2,12 +2,21 @@
   "name": "graphql-order",
   "private": true,
   "type": "module",
-  "workspaces": ["server", "client"],
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
     "dev": "npm run dev --workspace server",
     "schema": "npm run schema:emit --workspace server",
     "codegen": "npm run schema && npm run codegen --workspace client",
     "demo": "npm run demo --workspace client",
     "typecheck": "npm run typecheck --workspace server && npm run typecheck --workspace client"
+  },
+  "overrides": {
+    "@graphql-tools/executor-legacy-ws@>=1.0.0 <1.1.35": "1.1.39",
+    "@graphql-tools/utils@>=12.0.0 <12.0.2": "12.1.0",
+    "brace-expansion@>=5.0.0 <5.0.12": "5.0.12",
+    "shell-quote@>=1.0.0 <1.11.0": "1.12.0"
   }
 }
